@@ -1,0 +1,6 @@
+<div class="menu">
+  <h1><a routerLink="/lobby">Game of Go</a></h1>
+  <button (click)="logout()" class="fr">Log out</button>
+  <button *ngIf="getUrl() != 'lobby'" routerLink="/lobby" class="fr">Lobby</button>
+</div>
+<router-outlet></router-outlet>

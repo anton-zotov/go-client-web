@@ -1,0 +1,17 @@
+<div class="chat">
+  <div class="messages" #messagesDiv>
+    <div class="message" *ngFor="let message of messages" [ngClass]="{mine: message.mine, opponents: !message.mine}">
+      <div class="header">
+        <span class="date">{{ message.date }}</span>
+        <span class="user">{{ message.user }}</span>
+      </div>
+      <div class="text">
+        {{ message.text }}
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <input type="text" [(ngModel)]="message_text"/>
+    <button type="button" (click)="sendMessage()">Send message</button>
+  </div>
+</div>

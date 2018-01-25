@@ -1,0 +1,48 @@
+:host {
+    flex: 1 1 auto;
+    position: relative;
+  }
+.chat {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+}
+.messages {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+.message {
+    margin-bottom: 20px;
+}
+.controls {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row;
+    padding: 10px;
+}
+.controls input {
+    flex: 1 1 auto;
+}
+.controls button {
+    flex: 0 1 auto;
+}
+.message .text {
+    width: 80%;
+    display: inline-block;
+    word-break: break-word;
+}
+.user {
+    font-weight: bold;
+}
+.mine {
+    text-align: right
+}
+.mine .date {
+    float: right;
+    margin-left: 10px;
+}

@@ -1,0 +1,21 @@
+.menu {
+    height: 50px;
+    border-bottom: 1px solid #abbaab;
+    background-color: black;
+    padding: 0 15px;
+}
+.menu button {
+    margin-top: 15px;
+}
+.menu h1 {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 20px;
+}
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+button {
+    margin-left: 10px;
+}

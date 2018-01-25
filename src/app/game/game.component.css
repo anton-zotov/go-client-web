@@ -1,0 +1,90 @@
+.field {
+    /* border: 1px solid black; */
+    display: inline-block;
+}
+.cell {
+    float: left;
+    width: 0px;
+    text-align: center;
+    position: relative;
+}
+.ghosty {
+    opacity: 0.75;
+}
+.field-9 .cell {
+    width: 11.11%;
+    height: 11.11%;
+}
+.field-13 .cell {
+    width: 7.68%;
+    height: 7.68%;
+}
+.field-19 .cell {
+    width: 5.26%;
+    height: 5.26%;
+}
+.vline {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    border-left: 1px solid black; 
+    z-index: -2;
+}
+.hline {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-top: 1px solid black; 
+    z-index: -1;
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.b-left .hline {
+    left: 50%;
+    width: 50%;
+}
+.b-right .hline {
+    width: 50%;
+}
+.b-top .vline {
+    top: 50%;
+    height: 50%;
+}
+.b-bottom .vline {
+    height: 50%;
+}
+.cell_content {
+    max-width: 80%;
+    max-height: 80%;
+    vertical-align: middle;
+}
+
+.layout {
+    height: calc(100% - 60px);
+    display: inline-block;
+    vertical-align: top;
+}
+.field-layout {
+    width: 69%;
+    text-align: center;
+}
+.utility-layout {
+    width: 30%;
+    overflow-x: hidden;
+}
+.flex-box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.info {
+    flex: 0 1 auto;
+    padding: 20px 10px;
+}

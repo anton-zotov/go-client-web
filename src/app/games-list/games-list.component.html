@@ -1,0 +1,4 @@
+<div>
+  <div *ngFor="let game of games$ | async">{{ game | json }} 
+    <button (click)="openGame(game.id);">Open</button></div>
+</div>

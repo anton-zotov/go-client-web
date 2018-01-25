@@ -1,0 +1,11 @@
+.container {
+    padding: 20px;
+}
+p {
+    margin-bottom: 10px;
+}
+.submenu-link:not(.active) {
+    color: blue;
+    border-bottom: 1px dashed blue;
+    cursor: pointer;
+}

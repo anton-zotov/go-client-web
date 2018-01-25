@@ -1,0 +1,42 @@
+<div class="layout field-layout noselect" #fieldLayout>
+  <div class="field field-{{field_size}}" [style.width.px]="layout_size" [style.height.px]="layout_size">
+    <div class="cell" *ngFor="let cell of field.split(''); let i = index" 
+        [ngClass]="{'white': cell == 'w', 'black': cell == 'b', 'b-left': i % field_size == 0, 'b-right': (i + 1) % field_size == 0, 
+        'b-top': i < field_size, 'b-bottom': i >= field_size * (field_size - 1)}" (click)="onCellClick(i)">
+      <div class="vline"></div>
+      <div class="hline"></div>
+      <span class="helper"></span>
+      <span [class.ghosty]="cell == 'l' || cell == 'h'">
+      <img *ngIf="cell == 'w' || cell == 'h'" class="cell_content" src="/assets/images/white_stone.png"><img  *ngIf="cell == 'b' || cell == 'l'" class="cell_content" src="/assets/images/black_stone.png"><img *ngIf="cell == 'W'" class="cell_content" src="/assets/images/white_stone_marked.png"><img  *ngIf="cell == 'B'" class="cell_content" src="/assets/images/black_stone_marked.png"><img  *ngIf="cell == 'e'" class="cell_content" src="/assets/images/white_territory.png"><img  *ngIf="cell == 'k'" class="cell_content" src="/assets/images/black_territory.png">
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="layout utility-layout">
+  <div class="flex-box">
+    <div class="info">
+      <div>You are playing as {{ color }}</div>
+      <div>Current turn: {{ turn_number }}</div>
+      <div>
+        History: 
+        <button (click)="prevTurn()" [disabled]="shown_turn_number<=1">Prev turn</button>
+        {{ shown_turn_number }}
+        <button (click)="nextTurn()" [disabled]="shown_turn_number>=turn_number">Next turn</button>
+      </div>
+      <br />
+      <div *ngIf="invite"><h3>Invite code: {{ invite }}</h3>
+        <div>Waiting for opponent</div>
+      </div>
+      <div *ngIf="is_game_over">Game over</div>
+      <div *ngIf="!is_game_over && gameStarted()">
+        <div *ngIf="my_turn">
+          <b>Your turn</b>
+          <button (click)="skipTurn()" class="fr">Skip turn</button>
+        </div>
+        <div *ngIf="!my_turn">Oppenent's turn</div>
+      </div>
+    </div>
+    <app-chat [id_game]="id_game" [message]="new_message"></app-chat>
+  </div>
+</div>

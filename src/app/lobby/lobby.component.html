@@ -1,0 +1,18 @@
+<div class="container">
+    <p>
+        <select [(ngModel)]="fieldSize">
+            <option *ngFor="let size of fieldSizes" [ngValue]="size" [selected]="true">{{ size }} x {{ size }}</option>
+        </select>
+        <button type="button" (click)="newGame();">New game</button>
+    </p>
+    <p>
+        <input type="text" [(ngModel)]="invite_code" placeholder="Invite" />
+        <button type="button" (click)="joinGame();">Join game</button>
+    </p>
+    <br /><br />
+    <p>
+        <a class="submenu-link" [class.active]="active_games_shown" (click)="showActiveGames(true)">Active games</a> | 
+        <a class="submenu-link" [class.active]="!active_games_shown" (click)="showActiveGames(false)">History</a>
+    </p>
+    <app-games-list [active]="active_games_shown"></app-games-list>
+</div>

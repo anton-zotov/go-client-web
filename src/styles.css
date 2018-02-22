@@ -62,8 +62,20 @@ html, body {
 .dialog-box {
     padding: 20px;
     border: 1px solid #999;
-    border-radius: 10px;
-    max-width: 400px;
+	border-radius: 10px;
+	max-width: 400px;
+	display: inline-block;
+	margin-top: calc(48vh - 87px);
+}
+.dialog-box label {
+	width: 80px;
+	display: inline-block;
+}
+.dialog-box p {
+	margin-bottom: 10px;
+}
+.dialog-box h2 {
+	margin-bottom: 20px;
 }
 .noselect {
 	-webkit-touch-callout: none; /* iOS Safari */
